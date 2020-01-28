@@ -17,6 +17,8 @@ public class Robot extends TimedRobot {
   private PWMVictorSPX left = new PWMVictorSPX(0);     //A fix might be to import PWMVictorSPX's and use them instead of WPI_VictorSPX's  /* Old Code private WPI_VictorSPX leftFront = new WPI_VictorSPX(0)
   private PWMVictorSPX right = new PWMVictorSPX(1);    //2nd old code SpeedController leftFront = new PWMVictorSPX
 
+  private PWMVictorSPX shooterMotor1 = new PWMVictorSPX(2);
+
   private DifferentialDrive drive = new DifferentialDrive(left, right);
 
   private Joystick joystick1 = new Joystick(0);
@@ -44,7 +46,26 @@ public class Robot extends TimedRobot {
     double power = -joystick1.getRawAxis(1);
     double turn = joystick1.getRawAxis(4);
 
-    drive.arcadeDrive(power , turn);
+    drive.arcadeDrive(power, turn);
+
+    if(joystick1.getRawButtonPressed(4))
+    {
+      shooterMotor1.set(1);
+    }
+    else if(joystick1.getRawButtonReleased(4))
+    {
+      shooterMotor1.set(0);
+    }
+
+    if(joystick1.getRawButtonPressed(3))
+    {
+      shooterMotor1.set(-1);
+    }
+    else if(joystick1.getRawButtonReleased(3))
+    {
+      shooterMotor1.set(0);
+    }
+
   }
 
   @Override
