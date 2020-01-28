@@ -44,7 +44,25 @@ public class Robot extends TimedRobot {
     double power = -joystick1.getRawAxis(1);
     double turn = joystick1.getRawAxis(4);
 
-    drive.arcadeDrive(power , turn);
+    drive.arcadeDrive(power, turn);
+    
+    if(m_stick.getRawButton(4))
+    {
+      //Shoot out
+      m_shooterMotor1.set(1);
+    } else
+    {
+      m_shooterMotor1.set(0);
+    }
+
+    if(m_stick.getRawButton(3))
+    {
+      //Take in
+      m_shooterMotor1.set(-1);
+    } else
+    {
+      m_shooterMotor1.set(0);
+    }
   }
 
   @Override
