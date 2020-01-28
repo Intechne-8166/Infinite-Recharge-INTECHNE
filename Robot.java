@@ -24,7 +24,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     //If joystick degree is lower then 0.05 it doesnt move 
-    drive.setDeadband(0.05);
+    //drive.setDeadband(0.05);
   }
 
   @Override
@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
     double power = -joystick1.getRawAxis(1);
     double turn = joystick1.getRawAxis(4);
 
-    drive.arcadeDrive(power * 0.6, turn * 0.3);
+    drive.arcadeDrive(power , turn);
   }
 
   @Override
