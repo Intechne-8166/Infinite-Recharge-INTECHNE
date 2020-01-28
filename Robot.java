@@ -15,7 +15,9 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class Robot extends TimedRobot {
   private PWMVictorSPX left = new PWMVictorSPX(0);     //A fix might be to import PWMVictorSPX's and use them instead of WPI_VictorSPX's  /* Old Code private WPI_VictorSPX leftFront = new WPI_VictorSPX(0)
-  private PWMVictorSPX right = new PWMVictorSPX(1);    //2nd old code SpeedController leftFront = new PWMVictorSPX
+  private PWMVictorSPX right = new PWMVictorSPX(1); 
+  
+  private final PWMVictorSPX m_shooterMotor1 = new PWMVictorSPX(2); //2nd old code SpeedController leftFront = new PWMVictorSPX
 
   private DifferentialDrive drive = new DifferentialDrive(left, right);
 
