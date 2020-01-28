@@ -18,6 +18,7 @@ public class Robot extends TimedRobot {
   private PWMVictorSPX right = new PWMVictorSPX(1);    //2nd old code SpeedController leftFront = new PWMVictorSPX
 
   private PWMVictorSPX shooterMotor1 = new PWMVictorSPX(2);
+  private PWMVictorSPX intakeMotor1 = new PWMVictorSPX(3);
 
   private DifferentialDrive drive = new DifferentialDrive(left, right);
 
@@ -59,11 +60,11 @@ public class Robot extends TimedRobot {
 
     if(joystick1.getRawButtonPressed(3))
     {
-      shooterMotor1.set(-1);
+      intakeMotor1.set(-1);
     }
     else if(joystick1.getRawButtonReleased(3))
     {
-      shooterMotor1.set(0);
+      intakeMotor1.set(0);
     }
 
   }
